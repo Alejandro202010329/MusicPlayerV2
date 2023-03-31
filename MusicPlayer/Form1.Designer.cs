@@ -113,6 +113,7 @@
             this.btn_open.TabIndex = 5;
             this.btn_open.Text = "Abrir";
             this.btn_open.UseVisualStyleBackColor = true;
+            this.btn_open.Click += new System.EventHandler(this.btn_open_Click);
             // 
             // track_list
             // 

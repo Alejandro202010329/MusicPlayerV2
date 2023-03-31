@@ -16,6 +16,22 @@ namespace MusicPlayer
         {
             InitializeComponent();
         }
+        string[] paths, files;
+        private void btn_open_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Multiselect = true;
 
+            if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                files = ofd.FileNames;
+                paths = ofd.FileNames;
+
+                for (int x = 0; x <files.Length; x++)
+                {
+                    track_list.Items.Add(files[x]);
+                }
+            }
+        }
     }
 }
