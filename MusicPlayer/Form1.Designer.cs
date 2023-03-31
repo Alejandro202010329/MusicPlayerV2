@@ -80,6 +80,7 @@
             this.btn_play.TabIndex = 2;
             this.btn_play.Text = "Reproducir";
             this.btn_play.UseVisualStyleBackColor = true;
+            this.btn_play.Click += new System.EventHandler(this.btn_play_Click);
             // 
             // btn_pause
             // 
