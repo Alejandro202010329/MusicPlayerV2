@@ -41,6 +41,11 @@ namespace MusicPlayer
             player.Ctlcontrols.stop();
         }
 
+        private void btn_pause_Click(object sender, EventArgs e)
+        {
+            player.Ctlcontrols.pause();
+        }
+
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             player.URL = paths[track_list.SelectedIndex];

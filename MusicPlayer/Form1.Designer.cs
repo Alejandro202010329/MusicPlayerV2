@@ -91,6 +91,7 @@
             this.btn_pause.TabIndex = 3;
             this.btn_pause.Text = "Pausar";
             this.btn_pause.UseVisualStyleBackColor = true;
+            this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
             // 
             // btn_stop
             // 
