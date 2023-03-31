@@ -43,6 +43,7 @@
             this.lbl_track_start = new System.Windows.Forms.Label();
             this.lbl_tarck_end = new System.Windows.Forms.Label();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
+            this.lbl_song_name = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_art)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
@@ -69,6 +70,7 @@
             this.btn_next.TabIndex = 1;
             this.btn_next.Text = "Siguiente";
             this.btn_next.UseVisualStyleBackColor = true;
+            this.btn_next.Click += new System.EventHandler(this.btn_next_Click);
             // 
             // btn_play
             // 
@@ -201,12 +203,24 @@
             this.player.TabIndex = 9;
             this.player.Visible = false;
             // 
+            // lbl_song_name
+            // 
+            this.lbl_song_name.AutoSize = true;
+            this.lbl_song_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_song_name.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lbl_song_name.Location = new System.Drawing.Point(298, 16);
+            this.lbl_song_name.Name = "lbl_song_name";
+            this.lbl_song_name.Size = new System.Drawing.Size(118, 46);
+            this.lbl_song_name.TabIndex = 14;
+            this.lbl_song_name.Text = "Song";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(786, 375);
+            this.Controls.Add(this.lbl_song_name);
             this.Controls.Add(this.lbl_tarck_end);
             this.Controls.Add(this.lbl_track_start);
             this.Controls.Add(this.label1);
@@ -247,6 +261,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_track_start;
         private System.Windows.Forms.Label lbl_tarck_end;
+        private System.Windows.Forms.Label lbl_song_name;
     }
 }
 
