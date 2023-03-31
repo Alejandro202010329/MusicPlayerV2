@@ -67,6 +67,15 @@ namespace MusicPlayer
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
+                p_bar.Value = (int)player.Ctlcontrols.currentPosition;
+            }
+        }
+
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             player.URL = paths[track_list.SelectedIndex];

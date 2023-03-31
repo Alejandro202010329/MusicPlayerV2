@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btn_preview = new System.Windows.Forms.Button();
             this.btn_next = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.lbl_tarck_end = new System.Windows.Forms.Label();
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.lbl_song_name = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic_art)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
@@ -215,6 +217,11 @@
             this.lbl_song_name.TabIndex = 14;
             this.lbl_song_name.Text = "Song";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -263,6 +270,7 @@
         private System.Windows.Forms.Label lbl_track_start;
         private System.Windows.Forms.Label lbl_tarck_end;
         private System.Windows.Forms.Label lbl_song_name;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
