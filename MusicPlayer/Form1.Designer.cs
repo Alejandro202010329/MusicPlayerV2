@@ -125,6 +125,7 @@
             this.track_list.Name = "track_list";
             this.track_list.Size = new System.Drawing.Size(444, 212);
             this.track_list.TabIndex = 6;
+            this.track_list.SelectedIndexChanged += new System.EventHandler(this.track_list_SelectedIndexChanged);
             // 
             // pic_art
             // 

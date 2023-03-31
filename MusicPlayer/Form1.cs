@@ -17,6 +17,8 @@ namespace MusicPlayer
             InitializeComponent();
         }
         string[] paths, files;
+
+        
         private void btn_open_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -33,5 +35,11 @@ namespace MusicPlayer
                 }
             }
         }
+        private void track_list_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            player.URL = paths[track_list.SelectedIndex];
+            player.Ctlcontrols.play();
+        }
+
     }
 }
