@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WMPLib;
+using System.IO;
+using TagLib.NonContainer;
 
 namespace MusicPlayer
 {
@@ -67,6 +69,16 @@ namespace MusicPlayer
         {
             player.URL = paths[track_list.SelectedIndex];
             player.Ctlcontrols.play();
+            try
+            {
+                var file = TagLib.File.Create(paths[track_list.SelectedIndex]);
+                var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
+                pic_art.Image = Image.FromStream(new MemoryStream(bin));
+            }
+            catch
+            {
+
+            }
         }
         private void btn_preview_Click(object sender, EventArgs e)
         {
@@ -81,6 +93,8 @@ namespace MusicPlayer
             player.settings.volume = track_volume.Value;
             lbl_volume.Text = track_volume.Value.ToString()+"%";
         }
+
+        
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -101,6 +115,10 @@ namespace MusicPlayer
                 }
             }
            
+        }
+        private void p_bar_MouseDown(object sender, MouseEventArgs e)
+        {
+            player.Ctlcontrols.currentPosition = player.currentMedia.duration*e.X/p_bar.Width;
         }
 
     }
