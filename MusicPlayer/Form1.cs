@@ -16,6 +16,7 @@ namespace MusicPlayer
         public Form1()
         {
             InitializeComponent();
+            track_volume.Value = 40;
 
         }
         string[] paths, files;
@@ -73,6 +74,12 @@ namespace MusicPlayer
                 track_list.SelectedIndex = track_list.SelectedIndex - 1;
             }
         }
+
+        private void track_volume_Scroll(object sender, EventArgs e)
+        {
+            player.settings.volume = track_volume.Value;
+        }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
 

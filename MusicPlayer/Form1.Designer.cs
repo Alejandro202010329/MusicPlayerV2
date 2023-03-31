@@ -46,6 +46,7 @@
             this.player = new AxWMPLib.AxWindowsMediaPlayer();
             this.lbl_song_name = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbl_volume = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic_art)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_volume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.player)).BeginInit();
@@ -154,13 +155,14 @@
             // 
             // track_volume
             // 
-            this.track_volume.Location = new System.Drawing.Point(707, 68);
+            this.track_volume.Location = new System.Drawing.Point(707, 81);
             this.track_volume.Maximum = 100;
             this.track_volume.Name = "track_volume";
             this.track_volume.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.track_volume.Size = new System.Drawing.Size(56, 197);
+            this.track_volume.Size = new System.Drawing.Size(56, 184);
             this.track_volume.TabIndex = 10;
             this.track_volume.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
+            this.track_volume.Scroll += new System.EventHandler(this.track_volume_Scroll);
             // 
             // label1
             // 
@@ -222,12 +224,24 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lbl_volume
+            // 
+            this.lbl_volume.AutoSize = true;
+            this.lbl_volume.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_volume.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_volume.Location = new System.Drawing.Point(704, 62);
+            this.lbl_volume.Name = "lbl_volume";
+            this.lbl_volume.Size = new System.Drawing.Size(44, 16);
+            this.lbl_volume.TabIndex = 15;
+            this.lbl_volume.Text = "100%";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(786, 375);
+            this.Controls.Add(this.lbl_volume);
             this.Controls.Add(this.lbl_song_name);
             this.Controls.Add(this.lbl_tarck_end);
             this.Controls.Add(this.lbl_track_start);
@@ -271,6 +285,7 @@
         private System.Windows.Forms.Label lbl_tarck_end;
         private System.Windows.Forms.Label lbl_song_name;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbl_volume;
     }
 }
 
