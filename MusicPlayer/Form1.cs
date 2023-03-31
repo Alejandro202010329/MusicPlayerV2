@@ -17,6 +17,7 @@ namespace MusicPlayer
         {
             InitializeComponent();
             track_volume.Value = 40;
+            lbl_volume.Text = "40%";
 
         }
         string[] paths, files;
@@ -78,6 +79,7 @@ namespace MusicPlayer
         private void track_volume_Scroll(object sender, EventArgs e)
         {
             player.settings.volume = track_volume.Value;
+            lbl_volume.Text = track_volume.Value.ToString()+"%";
         }
 
         private void timer1_Tick(object sender, EventArgs e)

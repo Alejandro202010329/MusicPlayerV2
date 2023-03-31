@@ -152,6 +152,7 @@
             this.p_bar.Name = "p_bar";
             this.p_bar.Size = new System.Drawing.Size(761, 10);
             this.p_bar.TabIndex = 8;
+            this.p_bar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.p_bar_MouseDown);
             // 
             // track_volume
             // 
