@@ -59,6 +59,14 @@ namespace MusicPlayer
             }
         }
 
+        private void btn_preview_Click(object sender, EventArgs e)
+        {
+            if (track_list.SelectedIndex>0)
+            {
+                track_list.SelectedIndex = track_list.SelectedIndex -1;
+            }
+        }
+
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             player.URL = paths[track_list.SelectedIndex];

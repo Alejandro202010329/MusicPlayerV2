@@ -59,6 +59,7 @@
             this.btn_preview.TabIndex = 0;
             this.btn_preview.Text = "Anterior";
             this.btn_preview.UseVisualStyleBackColor = true;
+            this.btn_preview.Click += new System.EventHandler(this.btn_preview_Click);
             // 
             // btn_next
             // 
