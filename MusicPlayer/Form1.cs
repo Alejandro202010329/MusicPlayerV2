@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WMPLib;
 
 namespace MusicPlayer
 {
@@ -15,10 +16,12 @@ namespace MusicPlayer
         public Form1()
         {
             InitializeComponent();
+
         }
         string[] paths, files;
 
-        
+
+
         private void btn_open_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -58,28 +61,37 @@ namespace MusicPlayer
                 track_list.SelectedIndex++;
             }
         }
-
-        private void btn_preview_Click(object sender, EventArgs e)
-        {
-            if (track_list.SelectedIndex>0)
-            {
-                track_list.SelectedIndex = track_list.SelectedIndex -1;
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
-            {
-                p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
-                p_bar.Value = (int)player.Ctlcontrols.currentPosition;
-            }
-        }
-
         private void track_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             player.URL = paths[track_list.SelectedIndex];
             player.Ctlcontrols.play();
+        }
+        private void btn_preview_Click(object sender, EventArgs e)
+        {
+            if (track_list.SelectedIndex > 0)
+            {
+                track_list.SelectedIndex = track_list.SelectedIndex - 1;
+            }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+            if (player.playState == WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                p_bar.Maximum = (int)player.Ctlcontrols.currentItem.duration;
+                p_bar.Value = (int)player.Ctlcontrols.currentPosition;
+                try
+                {
+                    lbl_track_start.Text = player.Ctlcontrols.currentPositionString;
+                    lbl_tarck_end.Text = player.Ctlcontrols.currentItem.durationString.ToString();
+                    lbl_song_name.Text = player.Ctlcontrols.currentItem.name.ToString();
+                }
+                catch
+                {
+
+                }
+            }
+           
         }
 
     }
