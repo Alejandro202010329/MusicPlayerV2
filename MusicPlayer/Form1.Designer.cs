@@ -102,6 +102,7 @@
             this.btn_stop.TabIndex = 4;
             this.btn_stop.Text = "Detener";
             this.btn_stop.UseVisualStyleBackColor = true;
+            this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
             // 
             // btn_open
             // 
@@ -196,6 +197,7 @@
             this.player.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("player.OcxState")));
             this.player.Size = new System.Drawing.Size(786, 62);
             this.player.TabIndex = 9;
+            this.player.Visible = false;
             // 
             // Form1
             // 
